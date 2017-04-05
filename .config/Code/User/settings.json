@@ -1,0 +1,5 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "swift.path.sourcekiteDockerMode":true,
+    "swift.path.swift_driver_bin":"/usr/bin/swift"
+}
