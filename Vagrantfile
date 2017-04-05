@@ -61,17 +61,20 @@ Vagrant.configure(2) do |config|
       sudo apt-get --assume-yes update
       # Install
       sudo apt-get --assume-yes install code
+      mkdir -p .config/Code/User
+      curl -q -s -o .config/Code/User/settings.json https://raw.githubusercontent.com/carlbrown/LinuxSwiftGUISetup/master/.config/Code/User/settings.json      
+      
 
   ### Download Swift binary if not found, install it, and add it to the path
       if [ ! -f "#{SWIFT_FILE}" ]; then
-          curl -O "#{SWIFT_PATH}/#{SWIFT_FILE}"
+          curl -q -s -O "#{SWIFT_PATH}/#{SWIFT_FILE}"
       fi
       sudo tar -xzf #{SWIFT_FILE} --directory / --strip-components=1
       sudo find /usr/lib/swift -type d -print0 | sudo xargs -0 chmod a+rx
       sudo find /usr/lib/swift -type f -print0 | sudo xargs -0 chmod a+r
       
-  ### Add Libraries for XWindows
-      sudo apt-get --assume-yes install libgtk2.0 libgconf-2-4 libasound2 kcachegrind valkyrie
+  ### Add Libraries for XWindows and profiling
+      sudo apt-get --assume-yes install libgtk2.0 libgconf-2-4 libasound2 valgrind kcachegrind valkyrie
       
   ### Setup for VSCode Swift Integration
     git clone https://github.com/felix91gr/swift-linuxSetup.git
