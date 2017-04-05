@@ -62,9 +62,7 @@ Vagrant.configure(2) do |config|
       # Install
       sudo apt-get --assume-yes install code
       mkdir -p .config/Code/User
-      curl -q -s -o .config/Code/User/settings.json https://raw.githubusercontent.com/carlbrown/LinuxSwiftGUISetup/master/.config/Code/User/settings.json      
-      
-
+      curl -q -s -o .config/Code/User/settings.json https://raw.githubusercontent.com/SwiftAustin/LinuxSwiftGUISetup/master/.config/Code/User/settings.json      
   ### Download Swift binary if not found, install it, and add it to the path
       if [ ! -f "#{SWIFT_FILE}" ]; then
           curl -q -s -O "#{SWIFT_PATH}/#{SWIFT_FILE}"
