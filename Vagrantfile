@@ -72,7 +72,7 @@ Vagrant.configure(2) do |config|
       sudo find /usr/lib/swift -type f -print0 | sudo xargs -0 chmod a+r
       
   ### Add Libraries for XWindows and profiling
-      sudo apt-get --assume-yes install libgtk2.0 libgconf-2-4 libasound2 valgrind kcachegrind valkyrie massif-visualizer
+      sudo apt-get --assume-yes install libgtk2.0 libgconf-2-4 libasound2 valgrind kcachegrind valkyrie massif-visualizer gitg kdiff3
       
   ### Setup for VSCode Swift Integration
     git clone https://github.com/felix91gr/swift-linuxSetup.git
